@@ -1,6 +1,8 @@
 import React from 'react';
 import PlainLayout from "@/components/master/Plain-Layout";
 import parse from "html-react-parser";
+
+
 async function getData(){
     return (await (await fetch(`${process.env.HOST}/api/policy?type=privacy`)).json())['data']
 }

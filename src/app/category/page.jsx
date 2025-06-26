@@ -4,6 +4,7 @@ import NewsList from "@/components/news/NewsList";
 import PopularList from "@/components/news/PopularList";
 
 
+
 async function getData(id){
     let News= (await (await fetch(`${process.env.HOST}/api/news/category?catId=${id}`)).json())['data']
     let Popular= (await (await fetch(`${process.env.HOST}/api/news/type?type=Popular`)).json())['data']

@@ -5,8 +5,6 @@ import {Toaster} from "react-hot-toast";
 import {cookies} from "next/headers";
 
 
-
-
 async function getData(){
     let socials= (await (await fetch(`${process.env.HOST}/api/social`)).json())['data']
     let categories= (await (await fetch(`${process.env.HOST}/api/category`)).json())['data']
