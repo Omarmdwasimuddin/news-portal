@@ -4,11 +4,12 @@ import PopularList from "@/components/news/PopularList";
 import NewsDetails from "@/components/news/NewsDetails";
 import CommentsList from "@/components/news/Comments-List";
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 async function getData(id){
-    let Details= (await (await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/news/details?id=${id}`)).json())['data']
-    let Popular= (await (await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/news/type?type=Popular`)).json())['data']
-    let Comments= (await (await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/comments/news?postId=${id}`,{ cache: 'no-store' })).json())['data']
+    let Details= (await (await fetch(`${BASE_URL}/api/news/details?id=${id}`)).json())['data']
+    let Popular= (await (await fetch(`${BASE_URL}/api/news/type?type=Popular`)).json())['data']
+    let Comments= (await (await fetch(`${BASE_URL}/api/comments/news?postId=${id}`,{ cache: 'no-store' })).json())['data']
 
     return {Details:Details,Popular:Popular,Comments:Comments}
 }

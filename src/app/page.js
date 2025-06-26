@@ -4,12 +4,14 @@ import Hero from "@/components/news/Hero";
 import PopularList from "@/components/news/PopularList";
 import NewsList from "@/components/news/NewsList";
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+
 
 async function getData(){
-    let Slider= (await (await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/news/type?type=Slide`)).json())['data']
-    let Featured= (await (await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/news/type?type=Featured`)).json())['data']
-    let Popular= (await (await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/news/type?type=Popular`)).json())['data']
-    let Latest= (await (await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/news/latest`)).json())['data']
+    let Slider= (await (await fetch(`${BASE_URL}/api/news/type?type=Slide`)).json())['data']
+    let Featured= (await (await fetch(`${BASE_URL}/api/news/type?type=Featured`)).json())['data']
+    let Popular= (await (await fetch(`${BASE_URL}/api/news/type?type=Popular`)).json())['data']
+    let Latest= (await (await fetch(`${BASE_URL}/api/news/latest`)).json())['data']
     return {Slider:Slider,Featured:Featured,Popular:Popular,Latest:Latest}
 }
 
