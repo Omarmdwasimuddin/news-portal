@@ -8,7 +8,7 @@ import UserCommentsList from "@/components/comments/user-comments-list";
 
 async function getData(cookies) {
     let option={method: 'GET', headers: {'Cookie': cookies}, cache: 'no-store'}
-    let Comments = (await (await fetch(`${process.env.HOST}/api/comments/manage`,option)).json())['data'];
+    let Comments = (await (await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/comments/manage`,option)).json())['data'];
     return { Comments: Comments };
 }
 

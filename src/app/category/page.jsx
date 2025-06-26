@@ -6,8 +6,8 @@ import PopularList from "@/components/news/PopularList";
 
 
 async function getData(id){
-    let News= (await (await fetch(`${process.env.HOST}/api/news/category?catId=${id}`)).json())['data']
-    let Popular= (await (await fetch(`${process.env.HOST}/api/news/type?type=Popular`)).json())['data']
+    let News= (await (await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/news/category?catId=${id}`)).json())['data']
+    let Popular= (await (await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/news/type?type=Popular`)).json())['data']
     return {News:News,Popular:Popular}
 }
 

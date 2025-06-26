@@ -4,7 +4,7 @@ import parse from "html-react-parser";
 
 
 async function getData(){
-    return (await (await fetch(`${process.env.HOST}/api/policy?type=privacy`)).json())['data']
+    return (await (await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/policy?type=privacy`)).json())['data']
 }
 
 

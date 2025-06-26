@@ -6,7 +6,7 @@ import ProfileForm from "@/components/profile/profile-form";
 
 async function getData(cookies) {
     let option={method: 'GET', headers: {'Cookie': cookies}, cache: 'no-store'}
-    let profile = (await (await fetch(`${process.env.HOST}/api/user/profile/details`,option)).json())['data'];
+    let profile = (await (await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/user/profile/details`,option)).json())['data'];
     return { profile: profile };
 }
 

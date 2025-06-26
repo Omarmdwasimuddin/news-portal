@@ -6,9 +6,9 @@ import CommentsList from "@/components/news/Comments-List";
 
 
 async function getData(id){
-    let Details= (await (await fetch(`${process.env.HOST}/api/news/details?id=${id}`)).json())['data']
-    let Popular= (await (await fetch(`${process.env.HOST}/api/news/type?type=Popular`)).json())['data']
-    let Comments= (await (await fetch(`${process.env.HOST}/api/comments/news?postId=${id}`,{ cache: 'no-store' })).json())['data']
+    let Details= (await (await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/news/details?id=${id}`)).json())['data']
+    let Popular= (await (await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/news/type?type=Popular`)).json())['data']
+    let Comments= (await (await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/comments/news?postId=${id}`,{ cache: 'no-store' })).json())['data']
 
     return {Details:Details,Popular:Popular,Comments:Comments}
 }
