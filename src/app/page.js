@@ -6,10 +6,10 @@ import NewsList from "@/components/news/NewsList";
 
 
 async function getData(){
-    let Slider= (await (await fetch(`${NEXT_PUBLIC_BASE_URL}/api/news/type?type=Slide`)).json())['data']
-    let Featured= (await (await fetch(`${NEXT_PUBLIC_BASE_URL}/api/news/type?type=Featured`)).json())['data']
-    let Popular= (await (await fetch(`${NEXT_PUBLIC_BASE_URL}/api/news/type?type=Popular`)).json())['data']
-    let Latest= (await (await fetch(`${NEXT_PUBLIC_BASE_URL}/api/news/latest`)).json())['data']
+    let Slider= (await (await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/news/type?type=Slide`)).json())['data']
+    let Featured= (await (await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/news/type?type=Featured`)).json())['data']
+    let Popular= (await (await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/news/type?type=Popular`)).json())['data']
+    let Latest= (await (await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/news/latest`)).json())['data']
     return {Slider:Slider,Featured:Featured,Popular:Popular,Latest:Latest}
 }
 
