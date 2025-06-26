@@ -2,6 +2,8 @@ import React from 'react';
 import PlainLayout from "@/components/master/Plain-Layout";
 import parse from "html-react-parser";
 
+export const dynamic = "force-dynamic";
+
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 async function getData(){
