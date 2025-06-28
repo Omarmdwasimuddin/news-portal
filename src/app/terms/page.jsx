@@ -2,6 +2,7 @@ import React from 'react';
 import PlainLayout from "@/components/master/Plain-Layout";
 import parse from "html-react-parser";
 
+export const dynamic = "force-dynamic"
 
 async function getData(){
     return (await (await fetch(`${process.env.BASE_URL}/api/policy?type=terms`)).json())['data']
