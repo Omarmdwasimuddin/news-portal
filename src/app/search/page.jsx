@@ -3,6 +3,8 @@ import PlainLayout from "@/components/master/Plain-Layout";
 import NewsList from "@/components/news/NewsList";
 import PopularList from "@/components/news/PopularList";
 
+export const dynamic = "force-dynamic";
+
 async function getData(keywords){
     let News= (await (await fetch(`${process.env.BASE_URL}/api/news/search?keywords=${keywords}`)).json())['data']
     let Popular= (await (await fetch(`${process.env.BASE_URL}/api/news/type?type=Popular`)).json())['data']

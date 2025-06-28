@@ -4,6 +4,8 @@ import PopularList from "@/components/news/PopularList";
 import NewsDetails from "@/components/news/NewsDetails";
 import CommentsList from "@/components/news/Comments-List";
 
+export const dynamic = "force-dynamic";
+
 async function getData(id){
     let Details= (await (await fetch(`${process.env.BASE_URL}/api/news/details?id=${id}`)).json())['data']
     let Popular= (await (await fetch(`${process.env.BASE_URL}/api/news/type?type=Popular`)).json())['data']

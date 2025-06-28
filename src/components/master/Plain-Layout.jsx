@@ -4,6 +4,8 @@ import Footer from "@/components/master/Footer";
 import {Toaster} from "react-hot-toast";
 import {cookies} from "next/headers";
 
+export const dynamic = "force-dynamic";
+
 async function getData(){
     let socials= (await (await fetch(`${process.env.BASE_URL}/api/social`)).json())['data']
     let categories= (await (await fetch(`${process.env.BASE_URL}/api/category`)).json())['data']

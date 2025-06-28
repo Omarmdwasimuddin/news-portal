@@ -4,6 +4,7 @@ import Hero from "@/components/news/Hero";
 import PopularList from "@/components/news/PopularList";
 import NewsList from "@/components/news/NewsList";
 
+export const dynamic = "force-dynamic";
 
 async function getData(){
     let Slider= (await (await fetch(`${process.env.BASE_URL}/api/news/type?type=Slide`)).json())['data']

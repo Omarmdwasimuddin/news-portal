@@ -3,6 +3,8 @@ import PlainLayout from "@/components/master/Plain-Layout";
 import {cookies} from "next/headers";
 import ProfileForm from "@/components/profile/profile-form";
 
+export const dynamic = "force-dynamic";
+
 async function getData(cookies) {
     let option={method: 'GET', headers: {'Cookie': cookies}, cache: 'no-store'}
     let profile = (await (await fetch(`${process.env.BASE_URL}/api/user/profile/details`,option)).json())['data'];

@@ -3,6 +3,8 @@ import PlainLayout from "@/components/master/Plain-Layout";
 import {cookies} from "next/headers";
 import UserCommentsList from "@/components/comments/user-comments-list";
 
+export const dynamic = "force-dynamic";
+
 
 async function getData(cookies) {
     let option={method: 'GET', headers: {'Cookie': cookies}, cache: 'no-store'}
