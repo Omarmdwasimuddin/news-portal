@@ -4,11 +4,9 @@ import Footer from "@/components/master/Footer";
 import {Toaster} from "react-hot-toast";
 import {cookies} from "next/headers";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-
 async function getData(){
-    let socials= (await (await fetch(`${BASE_URL}/api/social`)).json())['data']
-    let categories= (await (await fetch(`${BASE_URL}/api/category`)).json())['data']
+    let socials= (await (await fetch(`${process.env.BASE_URL}/api/social`)).json())['data']
+    let categories= (await (await fetch(`${process.env.BASE_URL}/api/category`)).json())['data']
     return {socials:socials,categories:categories}
 }
 

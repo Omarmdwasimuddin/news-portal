@@ -3,11 +3,9 @@ import PlainLayout from "@/components/master/Plain-Layout";
 import NewsList from "@/components/news/NewsList";
 import PopularList from "@/components/news/PopularList";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-
 async function getData(id){
-    let News= (await (await fetch(`${BASE_URL}/api/news/category?catId=${id}`)).json())['data']
-    let Popular= (await (await fetch(`${BASE_URL}/api/news/type?type=Popular`)).json())['data']
+    let News= (await (await fetch(`${process.env.BASE_URL}/api/news/category?catId=${id}`)).json())['data']
+    let Popular= (await (await fetch(`${process.env.BASE_URL}/api/news/type?type=Popular`)).json())['data']
     return {News:News,Popular:Popular}
 }
 
